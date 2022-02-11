@@ -1,0 +1,41 @@
+plugins{
+    id 'java'
+    id 'idea'
+    id 'project-report'
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java',
+                       'build/generated-sources/src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        cacheChangingModulesFor 10, 'minutes'
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier = 'sources'
+}
+
+task javadocJar(type: Jar)  {
+    from javadoc
+    archiveClassifier = 'javadoc'
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}

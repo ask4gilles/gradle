@@ -15,7 +15,7 @@ $ ./gradlew build
 FAILURE: Build failed with an exception.
 
 * Where:
-Build file 'C:\Users\e101586\dev\repos\sandbox\gradle\sub-project\sub-project-api\build.gradle' line: 2
+Build file 'sub-project\sub-project-api\build.gradle' line: 2
 
 * What went wrong:
 Plugin [id: 'com.mycompany.example.java'] was not found in any of the following sources:
